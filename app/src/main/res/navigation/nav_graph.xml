@@ -10,6 +10,6 @@
         android:id="@+id/galleryFragment"
         android:name="taivu.uit.htttdd.imagehub.ui.gallery.GalleryFragment"
         android:label="fragement_gallery"
-        tools:layout="@layout/fragement_gallery" />
+        tools:layout="@layout/fragment_gallery" />
 
 </navigation>
