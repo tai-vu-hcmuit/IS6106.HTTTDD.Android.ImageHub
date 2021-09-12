@@ -1,7 +1,7 @@
 package taivu.uit.htttdd.imagehub.data
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class UnsplashPhoto(
