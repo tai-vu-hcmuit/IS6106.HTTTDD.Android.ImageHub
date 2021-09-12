@@ -1,4 +1,4 @@
-package taivu.uit.htttdd.imagehub
+package taivu.uit.htttdd.imagehub.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -25,6 +25,6 @@ data class UnsplashPhoto(
         val name: String,
         val username: String
     ) : Parcelable {
-        val attributionUrl get() = "https://unsplash.com/$username?utm_source=ImageSearchApp&utm_medium=referral"
+        val attributionUrl get() = "https://unsplash.com/$username?utm_source=ImageHub"
     }
 }
