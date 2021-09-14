@@ -10,6 +10,21 @@
         android:id="@+id/galleryFragment"
         android:name="taivu.uit.htttdd.imagehub.ui.gallery.GalleryFragment"
         android:label="fragement_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="taivu.uit.htttdd.imagehub.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details"
+        >
+        <argument
+            android:name="photo"
+            app:argType="taivu.uit.htttdd.imagehub.data.UnsplashPhoto" />
+    </fragment>
 
 </navigation>

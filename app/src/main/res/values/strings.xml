@@ -3,4 +3,7 @@
     <string name="content_not_loaded">Results could not be loaded</string>
     <string name="retry">Retry</string>
     <string name="search">Search</string>
+
+    <string name="image_description">This is the description</string>
+    <string name="creator_info">Photo by XYZ on Unsplash</string>
 </resources>
