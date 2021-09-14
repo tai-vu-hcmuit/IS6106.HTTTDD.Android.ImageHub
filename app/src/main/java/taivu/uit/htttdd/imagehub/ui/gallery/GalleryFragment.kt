@@ -16,7 +16,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import taivu.uit.htttdd.imagehub.data.UnsplashPhoto
 
 @AndroidEntryPoint
-class GalleryFragment : Fragment(R.layout.fragment_gallery), UnsplashPhotoAdapter.OnItemClickListener {
+class GalleryFragment : Fragment(R.layout.fragment_gallery),
+    UnsplashPhotoAdapter.OnItemClickListener
+{
 
     private val viewModel by viewModels<GalleryViewModel>()
 
@@ -35,12 +37,10 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery), UnsplashPhotoAdapte
             recyclerView.itemAnimator = null
             recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
                 header = UnsplashPhotoLoadStateAdapter { adapter.retry() },
-                footer = UnsplashPhotoLoadStateAdapter { adapter.retry() },
+                footer = UnsplashPhotoLoadStateAdapter { adapter.retry() }
             )
 
-            buttonRetry.setOnClickListener {
-                adapter.retry()
-            }
+            buttonRetry.setOnClickListener { adapter.retry() }
         }
 
         viewModel.photos.observe(viewLifecycleOwner) {
