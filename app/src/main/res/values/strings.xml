@@ -6,4 +6,5 @@
 
     <string name="image_description">This is the description</string>
     <string name="creator_info">Photo by XYZ on Unsplash</string>
+    <string name="photo_by_Unplash">Photo by: %1$s on Unsplash</string>
 </resources>

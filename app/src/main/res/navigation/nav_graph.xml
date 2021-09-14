@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/galleryFragment"
         android:name="taivu.uit.htttdd.imagehub.ui.gallery.GalleryFragment"
-        android:label="fragement_gallery"
+        android:label="Gallery"
         tools:layout="@layout/fragment_gallery" >
         <action
             android:id="@+id/action_galleryFragment_to_detailsFragment"
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="taivu.uit.htttdd.imagehub.ui.details.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Photo"
         tools:layout="@layout/fragment_details"
         >
         <argument
