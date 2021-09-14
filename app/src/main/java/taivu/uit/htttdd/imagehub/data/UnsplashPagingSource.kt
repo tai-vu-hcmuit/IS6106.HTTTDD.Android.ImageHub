@@ -1,6 +1,7 @@
 package taivu.uit.htttdd.imagehub.data
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import taivu.uit.htttdd.imagehub.api.UnsplashApi
 import retrofit2.HttpException
 import java.io.IOException
@@ -29,5 +30,9 @@ class UnsplashPagingSource(
         } catch (exception: HttpException) {
             LoadResult.Error(exception)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
+        return state.anchorPosition
     }
 }
