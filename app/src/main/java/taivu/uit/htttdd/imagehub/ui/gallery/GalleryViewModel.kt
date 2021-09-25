@@ -27,7 +27,7 @@ class GalleryViewModel @Inject constructor(
 
     companion object {
         private const val CURRENT_QUERY = "current_query"
-        private const val DEFAULT_QUERY = "cats"
+        private const val DEFAULT_QUERY = "statue of liberty"
     }
 
 }

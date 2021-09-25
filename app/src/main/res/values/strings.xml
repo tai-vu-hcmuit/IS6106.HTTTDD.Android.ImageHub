@@ -7,4 +7,6 @@
     <string name="image_description">This is the description</string>
     <string name="creator_info">Photo by XYZ on Unsplash</string>
     <string name="photo_by_Unplash">Photo by: %1$s on Unsplash</string>
+    <string name="save_img">Save</string>
+    <string name="save_success">Saved to gallery!</string>
 </resources>
