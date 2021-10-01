@@ -65,6 +65,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         textViewCreator.isVisible = true
                         textViewDescription.isVisible = photo.description != null
                         btSaveImg.isVisible = true
+                        btShareImage.isVisible = true
                         return false
                     }
                 })
@@ -72,6 +73,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 .into(imageView)
 
             textViewDescription.text = photo.description
+
 
             val uri = Uri.parse(photo.user.attributionUrl)
             val intent = Intent(Intent.ACTION_VIEW, uri)
@@ -123,7 +125,33 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                     Toast.makeText(imageView.context, getString(R.string.save_success), Toast.LENGTH_LONG).show()
                 }
             }
+
+            btShareImage.setOnClickListener{
+                // Get image bitmap from imageView
+                var bitmapDrawable = imageView.drawable as BitmapDrawable
+                val bitmap = bitmapDrawable.bitmap
+                val contentResolver = requireContext().contentResolver
+
+                val imgBitmapPath = MediaStore.Images.Media.insertImage(
+                    contentResolver,
+                    bitmap,
+                    "title",
+                    null
+                )
+                val imgBitmapUri = Uri.parse(imgBitmapPath)
+                val shareText = "The link below is nice "+photo.description+
+                        " image in the unsplash page .\n"+ photo.urls.full
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "*/*"
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imgBitmapUri)
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+                startActivity(Intent.createChooser(shareIntent, "Share Wallpaper using"))
+
+            }
+
         }
+
+
     }
 
 }
